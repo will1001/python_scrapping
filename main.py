@@ -13,9 +13,12 @@ def scrapping_data():
     views = soup.findAll('span', class_='style-scope ytd-video-meta-block')
     video_urls = soup.findAll('a', id='video-title')
     i = 0
+    j = 0
     for title in titles:
-        print('\n{}\n{}\n{}\nhttps://www.youtube.com{}'.format(title.text, views[i].text,                                                      video_urls[i].get('href')))
-        i += 1
+        print('\n{}\n{}\n{}\nhttps://www.youtube.com{}'.format(title.text, views[i].text, views[i + 1].text,
+                                                               video_urls[j].get('href')))
+        i += 2
+        j += 1
 
 
 if __name__ == '__main__':
